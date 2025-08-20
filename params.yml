@@ -1,0 +1,7 @@
+template-file-path: labInfrastructure.yaml
+parameters:
+  S3GroupName: S3ReadOnlyGroupRoland
+  EC2GroupName: EC2ReadOnlyGroupRoland
+  S3UserName: s3-user-roland
+  EC2UserName: ec2-user-roland
+tags: {}
