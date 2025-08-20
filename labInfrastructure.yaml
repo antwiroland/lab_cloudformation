@@ -131,6 +131,16 @@ Resources:
         Password: !Sub "{{resolve:secretsmanager:${OneTimePasswordSecret}::password}}"
         PasswordResetRequired: true
 
+  EC2User:
+    Type: AWS::IAM::User
+    Properties:
+      UserName: rolandToday
+      Groups:
+        - !Ref EC2ReadOnlyGroup
+      LoginProfile:
+        Password: !Sub "{{resolve:secretsmanager:${OneTimePasswordSecret}::password}}"
+        PasswordResetRequired: true
+
 Outputs:
   S3GroupNameOutput:
     Description: Name of the S3 group
